@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class RestaurantMenu implements Menu {
+    private List<MenuItem> items;
+
+    public RestaurantMenu() {
+        this.items = new ArrayList<>();
+        // Add menu items
+        items.add(new MenuItem("Burger", 10.99));
+        items.add(new MenuItem("Pizza", 12.99));
+        items.add(new MenuItem("Salad", 8.99));
+        // Add more items as needed
+    }
+
+    @Override
+    public List<MenuItem> getItems() {
+        return items;
+    }
+}
