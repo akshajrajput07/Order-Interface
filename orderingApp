@@ -1,0 +1,28 @@
+import java.util.List;
+
+public class OrderingApp {
+    public static void main(String[] args) {
+        Menu menu = new RestaurantMenu();
+        List<MenuItem> itemsOnMenu = menu.getItems();
+
+        // Display the menu
+        System.out.println("Menu:");
+        for (MenuItem item : itemsOnMenu) {
+            System.out.println(item);
+        }
+
+        // Customer places an order
+        Order order = new Order();
+        order.addItem(itemsOnMenu.get(0)); // Assuming the customer orders the first item on the menu
+        order.addItem(itemsOnMenu.get(2)); // Assuming the customer orders the third item on the menu
+
+        // Display the order
+        System.out.println("\nOrder:");
+        for (MenuItem item : order.getItems()) {
+            System.out.println(item);
+        }
+
+        // Display the total cost
+        System.out.println("\nTotal: $" + order.calculateTotal());
+    }
+}
